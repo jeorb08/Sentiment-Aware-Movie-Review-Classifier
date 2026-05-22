@@ -1,0 +1,58 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Sentiment-Aware Movie Review Classifier
+# requirements.txt — all verified latest versions as of May 2026
+#
+# Install:  pip install -r requirements.txt
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+# ── CORE: HuggingFace ecosystem ───────────────────────────────────────────────
+transformers==4.52.2      # DistilBERT model, tokenizer, Trainer, pipeline
+datasets==3.6.0           # Load IMDb dataset in one line
+evaluate==0.4.3           # Accuracy, F1 metrics during training
+tokenizers==0.21.1        # Fast tokenizer backend (installed with transformers)
+huggingface-hub==0.32.1   # Push fine-tuned model to HuggingFace Hub
+accelerate==1.7.0         # Required by Trainer for multi-GPU / mixed precision
+
+
+# ── DEEP LEARNING ─────────────────────────────────────────────────────────────
+torch==2.7.0              # PyTorch — model training backend
+                          # CPU-only. For GPU: install from pytorch.org separately
+
+
+# ── MACHINE LEARNING ─────────────────────────────────────────────────────────
+scikit-learn==1.8.0       # TF-IDF baseline model, confusion matrix, metrics
+numpy==2.3.0              # Numerical ops
+scipy==1.15.3             # Used internally by sklearn and shap
+
+
+# ── EXPLAINABILITY ────────────────────────────────────────────────────────────
+shap==0.47.2              # SHAP token-level explanations for DistilBERT
+
+
+# ── NLP UTILITIES ─────────────────────────────────────────────────────────────
+nltk==3.9.1               # Text cleaning, stopwords, tokenization for EDA
+wordcloud==1.9.4          # Word clouds per sentiment class in notebook 02
+
+
+# ── DATA & VISUALIZATION ──────────────────────────────────────────────────────
+pandas==2.3.0             # DataFrames, CSV save/load
+matplotlib==3.10.3        # Plots, heatmaps, confusion matrix
+seaborn==0.13.2           # Styled confusion matrix, distribution plots
+plotly==6.7.0             # Interactive confidence score charts in Streamlit
+
+
+# ── DASHBOARD ─────────────────────────────────────────────────────────────────
+streamlit==1.45.1         # Live demo app
+
+
+# ── EXPERIMENT TRACKING ───────────────────────────────────────────────────────
+mlflow==3.12.0            # Log training runs, hyperparams, metrics
+
+
+# ── UTILITIES ─────────────────────────────────────────────────────────────────
+tqdm==4.67.1              # Progress bars during tokenization / inference
+joblib==1.5.1             # Save/load sklearn baseline model
+python-dotenv==1.1.0      # Load HuggingFace token from .env file
+ipykernel==6.29.5         # Register venv as Jupyter kernel
+ipywidgets==8.1.7         # Progress bars inside Jupyter notebooks
